@@ -1,0 +1,22 @@
+body{
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #99549c;
+    text-align: center;
+}
+
+.logo {
+    padding: 5px;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 2%;
+    background-color: black;
+    background-position: center;
+    
+}
