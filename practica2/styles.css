@@ -93,8 +93,8 @@ h3{
     background-color: #904d9d;
 }
 
-.separador h3 span {
-    font-size: x-large;
+.separador h2 span {
+    font-size: xx-large;
    
 }
 
@@ -118,6 +118,19 @@ h3{
 .left-text {
     text-align: left;
 }
+
 .right-text {
+    margin-right: 5%;
     text-align: right;
+}
+
+
+.logoNirvana2 {
+    padding: 5px;
+    margin-left: 85%;
+    margin-right: 5%;
+    background-color: black;
+    background-position: center;
+    overflow: hidden;
+    
 }
