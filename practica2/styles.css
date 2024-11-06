@@ -124,13 +124,20 @@ h3{
     text-align: right;
 }
 
+.arreglos{
+    display: flex;
+    gap: 50px;
+    width: 13%; 
+    height: 9%;
+    margin-left: 100px;
+}
 
 .logoNirvana2 {
     padding: 5px;
     margin-left: 85%;
     margin-right: 5%;
+    margin-bottom: 100px;
     background-color: black;
     background-position: center;
     overflow: hidden;
-    
 }
