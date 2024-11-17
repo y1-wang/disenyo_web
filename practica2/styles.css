@@ -13,36 +13,40 @@ h1 {
 }
 
 h2 {
-    font-family: 'Times New Roman', Times, serif;
     color: white;
     margin-left: 10%;
 }
 
 h3{
-    font-family: 'Times New Roman', Times, serif;
     color: black;
 }
 
-.contenedor-grid { /*espaciado entre logo y separador*/
+h2 + h3{  /*selector adyacente*/
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contenedor-grid {  /*espaciado entre logo y separador*/
     display: grid;
     gap: 310px;
 }
 
-.logo {
+.logoNirvana {
     padding: 5px;
     margin-left: 45%;
     margin-right: 45%;
     margin-top: 2%;
     background-color: black;
+    box-shadow: 10px 10px 5px purple;  /*sombras en la caja*/
     background-position: center;
     overflow: hidden;
+    border-radius: 10px;  /*bordes redondeados*/
     
 }
 
 .logo2 {
     width: 40px;
     height: 50px;
-    position: absolute; 
+    position: fixed;  /*icono fijado en el sitio*/
     top: 3%;  
     right: 2%;
     background-color: black;
@@ -56,7 +60,7 @@ h3{
 .logo3 {
     width: 40px;
     height: 50px;
-    position: absolute; 
+    position: fixed;  /*icono fijado en el sitio*/
     top: 3%;  
     right: 4%;
     background-color: rgb(22, 21, 21);
@@ -93,17 +97,18 @@ h3{
     background-color: #904d9d;
 }
 
+
 .separador h2 span {
     font-size: xx-large;
    
 }
 
+
 .separador img {
-    padding: 30px;
+    padding: 50px;
     width: auto; 
     height: 80%;
 }
-
 
 .container {
     display: flex;
@@ -112,7 +117,15 @@ h3{
 }
 
 .container h3 span{
-    font-size: x-large;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#containerH3{
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+
 }
 
 .left-text {
@@ -124,20 +137,27 @@ h3{
     text-align: right;
 }
 
+a[href] {  /*enlace de la calle*/
+    color: blue;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: red;
+}
+
 .arreglos{
     display: flex;
-    gap: 50px;
+    gap: 50px; /*espacio entre los iconos de las reyes sociales*/
     width: 13%; 
     height: 9%;
     margin-left: 100px;
 }
 
 .logoNirvana2 {
-    padding: 5px;
     margin-left: 85%;
     margin-right: 5%;
-    margin-bottom: 100px;
-    background-color: black;
-    background-position: center;
     overflow: hidden;
+    padding-bottom: 100px; /*espacio entre el final y el logo*/
 }
+
