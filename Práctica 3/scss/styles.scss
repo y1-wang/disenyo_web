@@ -1,14 +1,20 @@
+:root{
+    //meter las variables de color, size, etc...!
+    --primary-color: #904d9d;
+}
+
 body{
     background-image: url(../fondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
+    width: 100%;
     height: 100vh;
 }
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
-    color: #99549c;
+    color: var( --primary-color);
     text-align: center;
 }
 
@@ -77,8 +83,11 @@ h2 + h3{  /*selector adyacente*/
     position: absolute; 
     top: 0;
     left: 0;
-    background-color: rgba(22, 21, 21, 0.742);
     overflow: hidden;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .menu img {
@@ -88,9 +97,39 @@ h2 + h3{  /*selector adyacente*/
     margin-left: 10%;
 }
 
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #656565;
+  opacity: 0.5;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+
+
+
 .separador {
     display: flex;
     justify-content: center;
+    color: #f0f0f0;
+    font-size: clamp(14px, 2vw, 18px);
+    text-align: justify;
     align-items: center;
     width: 100%;
     height: 50vh;
@@ -162,19 +201,139 @@ a:hover {
 }
 
 
-@media (max-width: 600px) {
+//MÓVIL
+@media (max-width: 600px){
     body{
-        background-attachment: fixed;  
+        background-attachment: fixed; 
+    }
+
+    h1{
+        font-size: large;
+    }
+
+
+    .logoNirvana {
+        padding: 3px;
+        margin-left: 40%;
+        margin-top: 2%;
+        background-color: black;
+        box-shadow: 5px 5px 3px purple;  /*sombras en la caja*/
+        background-position: center;
+        overflow: hidden;
+        border-radius: 5px;  /*bordes redondeados*/
         
     }
 
 
+//menú y barra de
+    .menu {
+    overflow: hidden;
+    display: inline-block;
+    }
+  
+    .menu-label {
+      display: inline-block;
+      cursor: pointer;
+      background-color: #2c3841;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 13px;
+      user-select: none;
+  
+      &:hover {
+        background-color: #7b8185;
+      }
+    }
+  
+    .menu-items {
+      display: none; // Ocultamos inicialmente
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  
+      li {
+        a {
+          display: block;
+          padding: 5px 10px;
+          text-decoration: none;
+          color: #f9f9f9;
+  
+          &:hover {
+            color: #000;
+            background-color: #f0f0f0;
+          }
+        }
+      }
+    }
+  
+    // Mostramos el menú cuando el checkbox está seleccionado
+    .menu-toggle:checked + .menu-label + .menu-items {
+      display:contents;
+    }
+ 
+
+
+.logo2 {
+    width: 2rem;
+    height: 3rem;
 }
 
 
-@media (max-width: 1024px) {
+.logo3 {
+    width: 2rem;
+    height: 3rem;
+}
+
+
+
+.contenedor-grid {  /*espaciado entre logo y separador*/
+    display: grid;
+    gap: 200px;
+}
+
+
+
+
+.separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    background-color: #904d9d;
+}
+
+
+.separador h2 span {
+    font-size: xx-large;
+   
+}
+
+.separador img {
+    padding: 20px;
+    width: auto; 
+    height: 70%;
+}
+
+}
+  
+
+
+
+
+
+//TABLET
+@media (max-width: 1024px) and (max-height: 1366px){
     body{
         background-attachment: fixed; 
     }
 
 }
+
