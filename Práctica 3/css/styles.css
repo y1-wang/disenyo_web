@@ -44,7 +44,7 @@ h2 + h3 { /*selector adyacente*/
   padding: 5px;
   margin: 2% auto;
   background-color: black;
-  box-shadow: 10px 10px 5px purple; /*sombras en la caja*/
+  box-shadow: 8px 8px 5px purple;
   background-position: center;
   overflow: hidden;
   border-radius: 10px; /*bordes redondeados*/
@@ -186,12 +186,12 @@ li a:hover {
 }
 
 a[href] { /*enlace de la calle*/
-  color: blue;
+  color: var(--secondary-color);
   text-decoration: underline;
 }
 
 a:hover {
-  color: red;
+  color: rgb(83, 83, 229);
 }
 
 .arreglos {
@@ -206,7 +206,7 @@ a:hover {
   margin-left: 85%;
   margin-right: 5%;
   overflow: hidden;
-  padding-bottom: 100px; /*espacio entre el final y el logo*/
+  padding-bottom: 100px;
 }
 
 @media (max-width: 600px) {
@@ -315,6 +315,13 @@ a:hover {
     padding: 30px;
     max-width: 40%;
   }
+  a[href] { /*enlace de la calle*/
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  a:hover {
+    color: rgb(195, 70, 195);
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -338,7 +345,6 @@ a:hover {
   .logoNirvana2 {
     margin-left: 75%;
     margin-right: 5%;
-    padding-bottom: 50px; /*espacio entre el final y el logo*/
   }
 }
 @media (min-width: 600px) and (max-height: 1366px) {
@@ -424,8 +430,24 @@ a:hover {
   h1 {
     color: var(--another-color);
   }
+  .logo2 {
+    width: 4rem;
+    height: 4rem;
+  }
+  .logo3 {
+    width: 4rem;
+    height: 4rem;
+    right: 5.4%;
+  }
   .logoNirvana {
-    box-shadow: 8px 8px 5px red; /*sombras en la caja*/
+    box-shadow: 8px 8px 5px red;
+  }
+  a[href] { /*enlace de la calle*/
+    color: var(--another-color);
+    text-decoration: underline;
+  }
+  a:hover {
+    color: rgb(239, 96, 96);
   }
   .separador {
     background-color: var(--another-color);
@@ -436,5 +458,13 @@ a:hover {
     color: #000;
     padding: 8px 19px;
     text-decoration: none;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  .container h3 {
+    font-size: x-large;
   }
 }/*# sourceMappingURL=styles.css.map */

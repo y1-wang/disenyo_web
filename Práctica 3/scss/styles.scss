@@ -1,8 +1,17 @@
 :root{
-    //meter las variables de color, size, etc...!
     --primary-color: #904d9d;
     --secondary-color: blue;
     --another-color: red;
+}
+
+// Condición IF para sombras del logo
+@mixin box-shadow($color) {
+    box-shadow: if($color == "primary", 10px 10px 5px $primary-color, 8px 8px 5px $color);
+}
+
+// Función para calcular padding dinámico
+@function calculate-padding($base, $factor) {
+    @return $base * $factor;
 }
 
 body{
@@ -39,14 +48,13 @@ h2 + h3{  /*selector adyacente*/
 }
 
 
-
 .logoNirvana {
     grid-template-rows: auto auto;
     row-gap: 0px;
     padding: 5px;
     margin: 2% auto;
     background-color: black;
-    box-shadow: 10px 10px 5px purple;  /*sombras en la caja*/
+    @include box-shadow("primary");
     background-position: center;
     overflow: hidden;
     border-radius: 10px;  /*bordes redondeados*/
@@ -56,7 +64,6 @@ h2 + h3{  /*selector adyacente*/
     font-size: clamp(1.5rem, 3vw, 2.5rem); 
     margin: 0; 
 }
-
 
 
 .logo2 {
@@ -129,7 +136,6 @@ li a:hover {
   color: white;
 }
 
-
 .separador {
     display: flex;
     justify-content: center;
@@ -166,8 +172,6 @@ li a:hover {
     height: auto;
 }
 
-
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -183,7 +187,6 @@ li a:hover {
     font-size: xx-large;
     color: white;
     font-weight: bold;
-
 }
 
 .left-text {
@@ -196,12 +199,12 @@ li a:hover {
 }
 
 a[href] {  /*enlace de la calle*/
-    color: blue;
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
 a:hover {
-    color: red;
+    color: rgb(83, 83, 229);
 }
 
 .arreglos{
@@ -216,7 +219,7 @@ a:hover {
     margin-left: 85%;
     margin-right: 5%;
     overflow: hidden;
-    padding-bottom: 100px; /*espacio entre el final y el logo*/
+    padding-bottom: calculate-padding(50px, 2);
 }
 
 
@@ -242,13 +245,11 @@ a:hover {
     }
 
 
-
-
-//menú y barra de
+    //menú y barra de
     .menu {
-    width: 21%;
-    height: 60%;
-    display: inline-block;
+        width: 21%;
+        height: 60%;
+        display: inline-block;
     }
 
     .menu img {
@@ -258,7 +259,6 @@ a:hover {
         margin-left: 10%;
     }
     
-
     .menu-label {
       display: inline-block;
       cursor: pointer;
@@ -269,9 +269,9 @@ a:hover {
       font-size: 10px;
       user-select: none;
   
-      &:hover {
-        background-color: #7b8185;
-      }
+        &:hover {
+            background-color: #7b8185;
+        }       
     }
   
     .menu-items {
@@ -293,10 +293,10 @@ a:hover {
           text-decoration: none;
           color: #f9f9f9;
   
-          &:hover {
-            color: #000;
-            background-color: #f0f0f0;
-          }
+            &:hover {
+              color: #000;
+             background-color: #f0f0f0;
+            }
         }
       }
     }
@@ -305,105 +305,97 @@ a:hover {
     .menu-toggle:checked + .menu-label + .menu-items {
       display:contents;
     }
- 
 
 
-.logo2 {
-    width: 2rem;
-    height: 3rem;
-}
+    .logo2 {
+      width: 2rem;
+     height: 3rem;
+    }
+
+    .logo3 {
+      width: 2rem;
+     height: 3rem;
+     right: 7.5%;
+    }
+
+    .contenedor-grid {  /*espaciado entre logo y separador*/
+        display: grid;
+        gap: 180px;
+    }
+
+    .separador img {
+       padding: 20px;
+      width: 40%; 
+      height: 50%;
+    }
+
+    .separador {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
 
 
-.logo3 {
-    width: 2rem;
-    height: 3rem;
-    right: 7.5%;
-}
+    .separador .texto {
+        max-width: 90%;
+        font-size: clamp(1rem, 2vw, 1.2rem); 
+    }
 
+    .separador h2 {
+        font-size: clamp(0.5rem, 3vw, 1.5rem);
+        margin-bottom: 1rem; 
+    } 
 
+    .separador h2 span {
+      font-size: x-large;
+    }
 
-/*centro*/
-.contenedor-grid {  /*espaciado entre logo y separador*/
-    display: grid;
-    gap: 180px;
-}
+    .separador img {
+        padding: 30px;
+        max-width: 40%; 
+    }
 
-.separador img {
-    padding: 20px;
-    width: 40%; 
-    height: 50%;
-}
+    a[href] {  /*enlace de la calle*/
+       color: var(--primary-color);
+       text-decoration: underline;
+    }
 
-.separador {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
+    a:hover {
+        color: rgb(195, 70, 195);
+    }
 
-}
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+    }
 
+    .container h3 span{
+        font-size: x-large;
+    }
 
-.separador .texto {
-    max-width: 90%;
-    font-size: clamp(1rem, 2vw, 1.2rem); 
-}
+    #containerH3{
+        font-size: x-large; 
+    }
 
-.separador h2 {
-    font-size: clamp(0.5rem, 3vw, 1.5rem);
-    margin-bottom: 1rem; 
-  }
+    .right-text {
+        margin-right: 3%;
+    }
 
-.separador h2 span {
-    font-size: x-large;
-}
+    .arreglos{
+        display: flex;
+        gap: 30px; /*espacio entre los iconos de las reyes sociales*/
+        height: 2em;
+        margin-left: 50px;
+    }
 
-.separador img {
-    padding: 30px;
-    max-width: 40%; 
-}
-
-
-
-
-
-
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-}
-
-.container h3 span{
-    font-size: x-large;
-}
-
-#containerH3{
-    font-size: x-large; 
-}
-
-.right-text {
-    margin-right: 3%;
-}
-
-
-.arreglos{
-    display: flex;
-    gap: 30px; /*espacio entre los iconos de las reyes sociales*/
-    height: 2em;
-    margin-left: 50px;
-}
-
-.logoNirvana2 {
-    margin-left: 75%;
-    margin-right: 5%;
-    padding-bottom: 50px; /*espacio entre el final y el logo*/
-}
-
+    .logoNirvana2 {
+        margin-left: 75%;
+        margin-right: 5%;
+    }
 
 }
-
-
 
 
 //TABLET
@@ -418,30 +410,25 @@ a:hover {
         color: var(--secondary-color);
     }
 
-
     .logoNirvana {
         padding: 2rem;
         margin-left: 41%;
         margin-top: 2%;
         background-color: black;
-        box-shadow: 8px 8px 5px blue;  
+        @include box-shadow(blue);
         border-radius: 10px;  
     }
-
 
     .logo2 {
         width: 3rem;
         height: 3rem;
     }
     
-    
     .logo3 {
         width: 3rem;
         height: 3rem;
         right: 5.3%;
     }
-
-
 
     .menu {
         width: 20%;
@@ -457,24 +444,20 @@ a:hover {
     }
     
     ul {
-      list-style-type: none;
-      width: 250px;
-      height: 50vh;
-      opacity: 0.6;
+        list-style-type: none;
+        width: 250px;
+         height: 50vh;
+         opacity: 0.6;
     }
     
     li a {
-      font-size: large;
-      display: block;
-      color: #000;
-      padding: 8px 19px;
-      text-decoration: none;
+         font-size: large;
+         display: block;
+        color: #000;
+         padding: 8px 19px;
+        text-decoration: none;
     }
     
-    
-
-    
-
 
     .separador {
         background-color: var(--secondary-color);
@@ -501,7 +484,6 @@ a:hover {
     }
 
 
-
     .arreglos{
         display: flex;
         gap: 40px; /*espacio entre los iconos de las redes sociales*/
@@ -510,15 +492,11 @@ a:hover {
         margin-left: 100px;
     }
 
-
     .logoNirvana2 {
         margin-left: 82%;
     }
 
-
-
 }
-
 
 
 //DISPOSITIVOS GRANDES
@@ -529,17 +507,33 @@ h1{
     color: var(--another-color);
 }
 
-
-.logoNirvana {
-    box-shadow: 8px 8px 5px red;  /*sombras en la caja*/
+.logo2 {
+    width: 4rem;
+    height: 4rem;
 }
 
+.logo3 {
+    width: 4rem;
+    height: 4rem;
+    right: 5.4%;
+}
 
+.logoNirvana {
+    @include box-shadow(red);
+}
+
+a[href] {  /*enlace de la calle*/
+    color: var(--another-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(239, 96, 96);
+}
 
 .separador {
     background-color: var(--another-color);
 }
-
 
 li a {
     font-size: x-large;
@@ -549,6 +543,14 @@ li a {
     text-decoration: none;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
 
-
+.container h3 {
+    font-size: x-large;
+}
+ 
 }
