@@ -17,18 +17,25 @@ h2 {
     margin-left: 10%;
 }
 
-h3{
-    color: black;
-}
-
 h2 + h3{  /*selector adyacente*/
     font-family: 'Times New Roman', Times, serif;
 }
 
-.contenedor-grid {  /*espaciado entre logo y separador*/
-    display: grid;
-    gap: 310px;
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    padding: 1rem 2rem;
+    background-color: #000000;
+    height: auto;
 }
+
+header img {
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+}
+
+
 
 .logoNirvana {
     padding: 5px;
@@ -71,6 +78,7 @@ h2 + h3{  /*selector adyacente*/
     height: 100%; 
 }
 
+/*
 .menu {
     width: 15%;
     height: 50%;
@@ -87,6 +95,9 @@ h2 + h3{  /*selector adyacente*/
     margin-top: 20%;
     margin-left: 10%;
 }
+
+
+*/
 
 .separador {
     display: flex;

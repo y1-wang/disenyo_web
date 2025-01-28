@@ -3,15 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
+    <title>práctica 4</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="contenedor-grid">
-        <div class="logoNirvana">
-           <h1>NIRVANA <br> TATTOO</h1>
-        </div>
+
+
+    <header>
+
+    <picture>  
+		<source
+			media="(min-width: 700px)"
+			sizes="1vw" 
+			srcset="calavera.png 200w,
+                    calavera.png 400w,
+                    calavera.png 600w">
+		<img
+			src="calavera.png" alt="logotipo"
+			sizes="5vw"
+			srcset="calavera.png 400w,
+                    calavera.png 800w,
+                    calavera.png 2000w">
+	</picture>
+
+        <h1>NIRVANA TATTOO</h1>
   
+    </header>
+
+
+
+    <audio controls autoplay loop muted> <!--Para que inicie automáticamente, sea infinito, y muteado-->
+        <source src="WE_WILL_ROCK_YOU_SONG.mp3" type="audio/mp3">
+        <source src="WE_WILL_ROCK_YOU_SONG.mp3" type="audio/ogg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+
+
         <div class="separador">
              <img src="estudio.jpeg">
       
@@ -21,6 +49,7 @@
         </div>
       </div>
   
+      <!--
       <div class="menu">
           <img src="menu.png">
           <h2>CONÓCENOS</h2>
@@ -28,7 +57,7 @@
           <h2>RESERVAS</h2>
           <h2>REDES SOCIALES</h2>
       </div>
-  
+  -->
       <div class="logo2">
           <img src="calavera.png">
       </div>
