@@ -36,7 +36,6 @@ header img {
 }
 
 
-
 .logoNirvana {
     padding: 5px;
     margin-left: 45%;
@@ -78,6 +77,35 @@ header img {
     height: 100%; 
 }
 
+
+audio {
+    background-color: blue;
+    border: 10px solid blue;
+    border-radius: 25px;
+    animation-name: mover;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;   
+}
+
+audio:hover {
+	animation-play-state: paused; 
+}
+
+@keyframes mover {      
+	from {
+		transform: translateX(0);   
+    }
+    to{
+        transform: translateX(1600px);
+        background-color: blueviolet;
+        border: 10px solid blueviolet;
+        border-radius: 25px;
+    }
+}
+
+
 /*
 .menu {
     width: 15%;
@@ -95,9 +123,21 @@ header img {
     margin-top: 20%;
     margin-left: 10%;
 }
-
-
 */
+
+
+.videos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    height: 50vh;
+    background-color: #654d9d;
+    margin-bottom: 1vh;
+
+}
+
 
 .separador {
     display: flex;
