@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>práctica 4, Yiyi Wang</title>
+    <link rel="stylesheet" href="YW_Práctica4.css">
+</head>
+<body>
+
+
+    <header>
+
+        <picture> <!--3 resoluciones, 2 formatos, tamaño mediante size cambiado-->
+            <source media="(min-width: 900px)" sizes="5vw" srcset="calavera.png 600w">
+            <source media="(min-width: 900px)" sizes="5vw" srcset="calavera2.jpg 600w">
+
+            <source media="(min-width: 700px)" sizes="6vw" srcset="calavera2.jpg 500w">
+            <source media="(min-width: 700px)" sizes="6vw" srcset="calavera.png 500w">
+
+            <source media="(max-width: 300px)" sizes="5vw" srcset="calavera.png 300w">
+            <source media="(max-width: 300px)" sizes="5vw" srcset="calavera2.jpg 300w">
+            <!--Foto guardado con diferentes formatos con Paint-->
+            <img src="calavera.png" alt="logotipo calavera">
+        </picture>
+
+        <h1>NIRVANA TATTOO</h1> 
+       
+    </header>
+
+
+    <audio controls autoplay loop muted> <!--Para que inicie automáticamente, sea infinito, y muteado-->
+        <source src="WE_WILL_ROCK_YOU_SONG.mp3" type="audio/mp3">
+        <source src="WE_WILL_ROCK_YOU_SONG.ogg" type="audio/ogg">
+        Tu navegador no soporta la etiqueta de audio.
+        <!--Audios descargados por enlace YouTube con un convertidor en internet-->
+    </audio>
+
+
+    <div class="videos"> 
+
+        <!--Vídeo 1-->
+        <video width="600vw" height="355vh" controls autoplay loop muted style="border: 10px solid #000000;">
+            <source src="nirvanaVideoPlayback.mp4" type="video/mp4">
+            <source src="nirvanaVideoPlayback.ogv" type="video/ogv">
+            Tu navegador no soporta la etiqueta de video.
+            <!--Vídeos descargados por enlace YouTube con un convertidor en internet-->
+        </video>
+
+        <!--Vídeo 2, con el mismo funcionamiento que la etiqueta video, autoplay, loop y muted-->
+        <iframe width="560vw" height="355vh" src="https://www.youtube.com/embed/2hEtd8AW5rY?autoplay=1&loop=1&mute=1&playlist=2hEtd8AW5rY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: 10px solid #000000;"></iframe>
+
+    </div>
+      
+
+
+    <div class="separador">
+             
+        <img src="estudio.jpeg" class="imagen imagen-1">
+        <img src="estudio2.jpeg" class="imagen imagen-2">
+      
+            <h2><span>CONOCE NUESTRA TIENDA DE TATTOOS</span>
+            <br><br>ENTENDEMOS QUE ESTE PROCESO PUEDE SER UN POCO ESTRESANTE SI ES LA PRIMERA VEZ; NUESTRO OBJETIVO ES QUE TODO TE RESULTE LO MÁS FÁCIL POSIBLE Y ANTES DE QUE PUEDAS DARTE CUENTA YA TENGAS TU NUEVO TATUAJE
+            <br><br><br>SI TE GUSTARÍA CONCERTAR UNA CITA CON NOSOTROS, VE DIRECTAMENTE A NUESTRO APARTADO DE RESERVAS Y DINOS QUE TE GUSTARÍA HACERTE.</h2>
+        </div>
+
+    </div>
+  
+      
+    <div class="logo2">
+        <img src="calavera.png">
+    </div>
+  
+    <div class="logo3">
+        <img src="incognito.png">
+    </div>
+  
+  
+</body>
+</html>

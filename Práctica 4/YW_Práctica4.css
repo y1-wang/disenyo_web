@@ -1,0 +1,153 @@
+body{
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    height: 100vh;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #99549c;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    margin-left: 10%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    padding: 1rem 2rem;
+    background-color: #000000;
+    height: auto;
+}
+
+header img {
+    object-fit: cover; /*asegura que la imagen se ajuste bien*/
+}
+
+.logoNirvana {
+    padding: 5px;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 2%;
+    background-color: black;
+    box-shadow: 10px 10px 5px purple;  /*sombras en la caja*/
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px;  /*bordes redondeados*/
+    
+}
+
+.logo2 {
+    width: 40px;
+    height: 50px;
+    position: fixed;  /*icono fijado en el sitio*/
+    top: 3%;  
+    right: 2%;
+    background-color: black;
+}
+
+.logo2 img {
+    width: 100%; 
+    height: 100%; 
+}
+
+.logo3 {
+    width: 40px;
+    height: 50px;
+    position: fixed;  /*icono fijado en el sitio*/
+    top: 3%;  
+    right: 4%;
+    background-color: rgb(22, 21, 21);
+}
+
+.logo3 img {
+    width: 100%; 
+    height: 100%; 
+}
+
+
+/*---ANIMACIÓN---*/
+audio {
+    background-color: blue;
+    border: 10px solid blue;
+    border-radius: 25px;
+    animation-name: mover;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;     /*veces repetidas*/
+	animation-timing-function: ease-in-out;    /*tipo de movimiento*/
+	animation-direction: alternate;        /*va y vuelve*/
+}
+
+audio:hover {
+	animation-play-state: paused; 
+}
+
+@keyframes mover {      
+	from {
+		transform: translateX(0);   
+    }
+    to{
+        transform: translateX(1550px);
+        background-color: blueviolet;
+        border: 10px solid blueviolet;
+        border-radius: 25px;
+    }
+}
+
+
+
+.videos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    height: 50vh;
+    background-color: #654d9d;
+    margin-bottom: 1vh;
+
+}
+
+.separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    background-color: #904d9d;
+}
+
+.separador h2 span {
+    font-size: xx-large;
+   
+}
+
+
+/*---TRANSICIÓN---*/
+.separador img {
+    padding: 50px;
+    width: auto; 
+    height: 80%;
+    transition-property: opacity;   /*qué transiciona*/
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;  /*cómo transiciona*/
+}
+
+.imagen-2 {
+    opacity: 0;  /*imagen2 está oculta si el ratón no está encima */
+}
+
+.separador:hover .imagen-2 {
+    opacity: 1;  /*se muestra la imagen si pasa el ratón*/
+}
+
+.separador:hover .imagen-1 {
+    opacity: 0;  /*imagen1 se oculta al hacer hover */
+}
+
