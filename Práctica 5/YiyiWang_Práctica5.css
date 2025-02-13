@@ -1,8 +1,107 @@
 body{
     font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(to bottom, #6ec55f, #b7f7cb);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+}
+
+h1 {
+    color: black;
+    font-size: 3rem;
+    text-shadow: 5px 5px 8px green;
+    animation: fadeIn 2s ease-out, swing 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+
+.contenedor{
+    height: 350px;
+    width: 500px;
+    background-color: rgb(48, 194, 99);
+    border-radius: 10%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.contenedor::before{
+    content: "";
+    position: absolute;
+    height: 580px;
+    width: 600px;
+    background-image: conic-gradient(rgb(6, 6, 6) 20deg, transparent 120deg);
+    animation: rotar 2s linear infinite;
+}
+
+@keyframes rotar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+.contenedor::after{
+    content: "";
+    position: absolute;
+    height: 330px;
+    width: 480px;
+    background-color: rgb(48, 194, 99);
+    border-radius: 10%;
+
+}
+
+
+
+@keyframes swing {
+    0% { transform: rotate(-5deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0); }
+}
+
+
+.menu{
+    z-index: 2;
+}
+
+.button{
+    background-color: #57d6a3;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: slideUp 1s ease-out;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.button:active {
+    transform: scale(0.98);
 }
