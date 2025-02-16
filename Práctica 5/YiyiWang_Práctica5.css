@@ -107,14 +107,14 @@ button:active { /*al hacer click se expande*/
 }
 
 /*JUEGO*/
-#game{
+.game{
     width: 500px;
     height: 200px;
     border: 1px solid black;
     overflow: hidden;
 }
 
-#character{
+#dino{
     width: 20px;
     height: 50px;
     background-color: green;
@@ -122,8 +122,8 @@ button:active { /*al hacer click se expande*/
     top:150px;
 }
 
-.animate{
-    animation: jump 500ms;
+.jump{
+    animation: jump 500ms linear; /*llamada con js*/
 }
 
 @keyframes jump{
@@ -133,7 +133,7 @@ button:active { /*al hacer click se expande*/
     100%{top:150px;}
 }
 
-#block{
+#cactus{
     width: 20px;
     height: 20px;
     background-color: red;
@@ -145,6 +145,6 @@ button:active { /*al hacer click se expande*/
 
 @keyframes block {
     0%{left:480px;}
-    100%{left: -40px;}
+    100%{left: -30px;} /*para que se salga de la div*/
 }
 
