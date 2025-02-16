@@ -5,20 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dino</title>
     <link rel="stylesheet" href="YiyiWang_Práctica5.css">
+    <script src="YiyiWang_Práctica5.js" defer></script>
 </head>
 <body>
 
-
-<div class="contenedor">
+<div id="pantalla-inicial" class="hidden">
     <h1>¡Juego del Dino!</h1>
 
     <div class="menu">
-        <button class="button">Iniciar el juego</button>
-        <button class="button">Instrucciones</button>
+        <button id="button-jugar">Iniciar el juego</button>
+        <button id="button-instrucciones">Instrucciones</button>
+        <div id="instrucciones" class="hidden">
+            <p>Las instrucciones son muy sencillas!</p>
+        </div>
     </div>
 </div>
 
-    <script src="YiyiWang_Práctica5.js"></script>
+<div id="pantalla-juego" class="hidden">
+    <h2>Juego en progreso</h2>
+    <div id="game">
+        <div id="character"></div>
+        <div id="block"></div>
+    </div>
+</div>
+
+<div id="pantalla-final" class="hidden">
+    <h1 id="mensaje-final">PERDISTE</h1>
+    <button id="button-reinicial">Reiniciar</button>
+
+</div>
+
 
 </body>
 </html>

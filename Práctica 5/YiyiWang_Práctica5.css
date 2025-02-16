@@ -16,8 +16,21 @@ h1 {
     z-index: 2;
 }
 
+@keyframes fadeIn { /*aparición al cargar la página*/
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-.contenedor{
+@keyframes swing { /*balanceo del título*/
+    0% { transform: rotate(-5deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0); }
+}
+
+/*CONFIGURACIÓN DEL BORDE ROTATORIO*/
+#pantalla-inicial{ /*un primer div grande*/
     height: 350px;
     width: 500px;
     background-color: rgb(48, 194, 99);
@@ -30,14 +43,13 @@ h1 {
     flex-direction: column;
 }
 
-
-.contenedor::before{
+#pantalla-inicial::before{ /*parte rotatorio*/
     content: "";
     position: absolute;
     height: 580px;
     width: 600px;
     background-image: conic-gradient(rgb(6, 6, 6) 20deg, transparent 120deg);
-    animation: rotar 2s linear infinite;
+    animation: rotar 4s linear infinite;
 }
 
 @keyframes rotar{
@@ -49,7 +61,7 @@ h1 {
     }
 }
 
-.contenedor::after{
+#pantalla-inicial::after{ /*un segundo div más pequeño que está por encima del div grande y la parte móvil*/
     content: "";
     position: absolute;
     height: 330px;
@@ -59,22 +71,11 @@ h1 {
 
 }
 
-
-
-@keyframes swing {
-    0% { transform: rotate(-5deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(-5deg); }
-    75% { transform: rotate(5deg); }
-    100% { transform: rotate(0); }
-}
-
-
 .menu{
-    z-index: 2;
+    z-index: 2; /*para que se visualice por encima del resto de elementos*/
 }
 
-.button{
+button{
     background-color: #57d6a3;
     border: none;
     padding: 15px 30px;
@@ -88,20 +89,62 @@ h1 {
     animation: slideUp 1s ease-out;
 }
 
-.button:hover{
+button:hover{ /*al pasar por encima del botón, aunmente de tamaño*/
     transform: scale(1.1);
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes slideUp {
+@keyframes slideUp { /*animación de abajo a arriba al carga la página*/
     0% { transform: translateY(30px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
 }
 
-.button:active {
-    transform: scale(0.98);
+button:active { /*al hacer click se expande*/
+    transform: scale(1.5);
 }
+
+.hidden{
+    display: none;
+}
+
+/*JUEGO*/
+#game{
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+#character{
+    width: 20px;
+    height: 50px;
+    background-color: green;
+    position: relative;
+    top:150px;
+}
+
+.animate{
+    animation: jump 500ms;
+}
+
+@keyframes jump{
+    0%{top:150px;}
+    30%{top:100px;}
+    70%{top: 100px;}
+    100%{top:150px;}
+}
+
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: relative;
+    top: 130px;
+    left: 480px;
+    animation: block 1s infinite linear;
+}
+
+@keyframes block {
+    0%{left:480px;}
+    100%{left: -40px;}
+}
+
