@@ -11,33 +11,40 @@ function jump(){
     }, 400);
 }
 
+
 let isAlive = setInterval(function(){
     let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
     let cactusLeft = parseInt(window.getComputedStyle(cactus) . getPropertyValue("left"));
     let botonReiniciar = document.getElementById("button-reiniciar");
 
-    if(cactusLeft < 20 && cactusLeft > 0 && dinoTop >= 130){
-        cactus.style.animation = "none";
-        cactus.style.display = "none"; //ES NECESARIO REINICIAR SI SE USA ESTO
-        
-        botonReiniciar.classList.remove("hidden");
+    if(cactusLeft < 25 && cactusLeft > 0 && dinoTop >= 150){ //revisa la distancia a la que están
+        cactus.style.animation = "none"; //PARA QUE NO CHOQUE UNA Y OTRA VEZ
+        cactus.style.display = "none"; //HACE DESAPARECER EL BLOQUE ROJO
+        /*botonReiniciar.classList.remove("hidden"); */
+        botonReiniciar.style.display = "block"; // Asegura que se muestre sí o sí
 
-        alert("Game Over!");
+        alert("Game Over. ¡Inténtalo de nuevo!");
     }
-}, 10);
+}, 10); //cada 10ms ejecuta la función para comprobar la posición del dinosaurio y el cactus
 
+
+// ESTO HACE QUE FUNCIONE OTRA VEZ SI REINICIO
+document.getElementById("button-reiniciar").addEventListener("click", function() {
+    cactus.style.animation = "block 1s infinite linear";
+    cactus.style.display = "block";
+
+    botonReiniciar.classList.remove("hidden");
+
+});
+
+
+//acciona el teclado para saltar
 document.addEventListener("keydown", function(event){ //con cualquier tecla salta
     jump();
 });
 
 
-// Función para reiniciar el juego. COMPLETA ESTO
-function reiniciarJuego() {
-    jump(); 
-}
-
-
-
+//Estructura de botones y páginas
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('button-jugar').addEventListener('click', function(jump) {
         document.getElementById('pantalla-inicial').style.display="none";
@@ -54,35 +61,4 @@ document.getElementById('button-reiniciar').addEventListener('click', function()
     document.getElementById("pantalla-inicial").style.display = "flex";
     document.getElementById('pantalla-juego').classList.add('hidden');
     document.getElementById("button-reiniciar").style.display = "none";
-
-
 });
-
-
-
-/*
-var block = document.getElementById("block");
-
-function jump(){
-    if(character.classList != "animate"){
-        character.classList.add("animate");
-    }
-    setTimeout(function(){
-        character.classList.remove("animate");
-    },500);
-}
-
-
-var checkDead = setInterval(function(){
-    var characterTop =
-    parseInt(window.getComputedStyle(character) . getPropertyValue("top"));
-    var blockLeft =
-    parseInt(window.getComputedStyle(character) . getPropertyValue("left"));
-    if(blockLeft<20 && blockLeft>0 && characterTop>=130){
-            block.style.animation = "none";
-            block.style.display = "none";
-            alert("u lose!");
-        }
-},10);
-
-*/
