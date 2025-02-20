@@ -18,13 +18,20 @@
         <div id="instrucciones" class="hidden">
             <p>¡Las instrucciones son muy sencillas!</p>
             <p>Pulsa cualquier tecla para esquivar los obstáculos. Si te toca la Pokeball, ¡pierdes!</p>
+            <p>¡Aguanta hasta 10 segundos para ganar!</p>
+            <p>Extra ¡Busca el Easter Egg!</p>
         </div>
     </div>
 </div>
 
 
 <div id="pantalla-juego" class="hidden">
-    <h2>¡SALTA!</h2>
+
+<!-- Uso del WEB COMPONENT aquí -->
+<div class="web">
+    <salta-titulo></salta-titulo>
+</div>
+
     <div class="game">
         <div id="dino"></div>
         <div id="cactus"></div>
@@ -32,6 +39,7 @@
 </div>
 
 <button id="button-reiniciar" class="hidden">Reiniciar</button>
+
 
 
 <script src="YiyiWang_Práctica5.js" defer></script>

@@ -16,6 +16,17 @@ h1 {
     z-index: 2;
 }
 
+p{
+    display: flex;
+    justify-content: center;
+}
+
+p:last-child{
+    font-weight: bold;
+    font-size: large;
+    color: #ea6506;
+}
+
 @keyframes fadeIn { /*aparición al cargar la página*/
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -111,7 +122,7 @@ button:active { /*al hacer click se expande*/
     width: 500px;
     height: 200px;
     background-color: rgb(205, 237, 156);
-    border: 5px solid rgb(183, 223, 136);
+    border: 5px solid #ea6506;
     overflow: hidden;
 }
 
@@ -151,3 +162,16 @@ button:active { /*al hacer click se expande*/
     100%{left: -30px;} /*para que se salga de la div*/
 }
 
+
+/* Estilos para el WEB COMPONENT */
+
+salta-titulo {
+    font-size: 1em;
+    color: #ea6506;
+    font-weight: bold;
+}
+
+.web{
+    background-color: rgb(205, 237, 156);
+    text-align: center;
+}
